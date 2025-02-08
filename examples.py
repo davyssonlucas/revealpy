@@ -25,25 +25,20 @@ def slide_codigo(pres, titulo, codigo):
 def slide_equacao(pres, titulo, equacao, descricao):
     pres.create_slide(titulo).add_equation(equation=equacao, description=descricao)
 
-# Criando a apresentação
 pres = Presentation(theme="black", transition="fade", enable_pdf_export=True)
 
-# Slides de introdução
 slide_titulo(pres, "Eletricidade Básica", "Uma introdução aos conceitos fundamentais")
 slide_texto(pres, "O que é Eletricidade?",
             "A eletricidade é o fluxo de cargas elétricas, sendo uma das formas fundamentais de energia.",
             ["Movimento de elétrons gera corrente elétrica.", "Transformação em calor, luz e movimento."])
 
-# Exemplo visual
 slide_imagem(pres, "Exemplo de Circuito",
              "https://www.flippingphysics.com/uploads/2/1/1/0/21103672/0350-animated-gif-1-one-resistor_orig.gif",
              "Circuito básico com resistor e fonte")
 
-# Lei de Ohm
 slide_equacao(pres, "Lei de Ohm", "V = I \\cdot R",
               {"V": "Tensão (Volts)", "I": "Corrente (Ampères)", "R": "Resistência (Ohms)"})
 
-# Tabela de unidades
 slide_tabela(pres, "Unidades e Símbolos",
              ["Grandeza", "Unidade", "Símbolo"],
              [["Corrente", "Ampere", "A"],
@@ -51,7 +46,6 @@ slide_tabela(pres, "Unidades e Símbolos",
               ["Resistência", "Ohm", "Ω"],
               ["Potência", "Watt", "W"]])
 
-# Exemplo de código
 slide_codigo(pres, "Exemplo de Código: Lei de Ohm", """
 # Cálculo da Lei de Ohm
 voltage = 9  # Voltagem em Volts
@@ -60,7 +54,6 @@ current = voltage / resistance
 print(f'Corrente: {current} A')
 """)
 
-# Adicionando um diagrama
 pres.create_slide("Diagrama de Circuito") \
     .add_diagram("""
 graph TD;
@@ -75,5 +68,4 @@ pres.create_slide("Vídeo Didático") \
         media_type="video"
     )
 
-# Exportando
 pres.export("output/eletricidade_basica.html")
