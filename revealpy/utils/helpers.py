@@ -24,19 +24,34 @@ def load_template(theme: str, transition: str, slides_content: str, pdf_export: 
 
     pdf_script = """
         function exportPDF() {
-            // Instructions alert
-            alert('Para exportar como PDF:\\n\\n' +
-                  '1. Pressione Ctrl+P (Cmd+P no Mac)\\n' +
-                  '2. Mude o destino para "Salvar como PDF"\\n' +
-                  '3. Em Mais configurações:\\n' +
-                  '   - Ative a opção "Gráficos em segundo plano"\\n' +
-                  '   - Defina a orientação como "Paisagem"\\n' +
-                  '   - Defina as margens como "Nenhuma"\\n' +
-                  '4. Clique em Salvar');
-
-            // Trigger print dialog
-            window.print();
-        }
+    
+        if (typeof Reveal.getPdf === 'function') {
+            // Gera o PDF diretamente
+            Reveal.getPdf().then(pdf => {
+                // Cria um link de download para o PDF
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(pdf);
+                link.download = 'apresentacao.pdf';
+                link.click();
+            }).catch(err => {
+                console.error('Erro ao exportar PDF:', err);
+                alert('Houve um erro ao gerar o PDF.');
+            });}else{
+                // Instructions alert
+                alert('PDF Plugin não está carregado ou disponível.\\n' +
+                      'Para exportar como PDF:\\n\\n' +
+                      '1. Pressione Ctrl+P (Cmd+P no Mac)\\n' +
+                      '2. Mude o destino para "Salvar como PDF"\\n' +
+                      '3. Em Mais configurações:\\n' +
+                      '   - Ative a opção "Gráficos em segundo plano"\\n' +
+                      '   - Defina a orientação como "Paisagem"\\n' +
+                      '   - Defina as margens como "Nenhuma"\\n' +
+                      '4. Clique em Salvar');
+    
+                // Trigger print dialog
+                window.print();
+            }
+            }
     """ if pdf_export else ""
 
     return f"""
@@ -54,10 +69,6 @@ def load_template(theme: str, transition: str, slides_content: str, pdf_export: 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
 
         <style>
-            .reveal img {{
-                max-width: auto;
-                height: auto;
-            }}
 
             .pdf-btn {{
                 position: fixed;

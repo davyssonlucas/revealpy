@@ -255,12 +255,18 @@ class SlideBuilder:
     def add_media(self, url: str, media_type: str = "video") -> 'SlideBuilder':
         if media_type not in ["video", "audio"]:
             raise ValueError("media_type must be either 'video' or 'audio'")
+
+        if media_type == "video" and "youtube.com" in url:
+            # Transformar o URL do YouTube em URL de incorporação
+            video_id = url.split("v=")[-1]  # Extrair o ID do vídeo
+            embed_url = f"https://www.youtube.com/embed/{video_id}"
+            url = embed_url  # Substitui o URL original pelo URL de incorporação
+
         self.contents.append(Content(ContentType.MEDIA, {
             'url': url,
             'type': media_type
         }))
         return self
-
 
     def add_markdown(self, markdown_content: str) -> 'SlideBuilder':
         """

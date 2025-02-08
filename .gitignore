@@ -21,4 +21,3 @@ MANIFEST.in
 setup.py
 poetry.lock
 poetry.toml
-examples.py
