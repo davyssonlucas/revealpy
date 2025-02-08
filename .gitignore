@@ -1,5 +1,6 @@
 output
 antigos
+anotations.md
 themes
 templates
 *.pyc
@@ -10,3 +11,14 @@ templates
 __pycache__/
 .idea
 dev.env
+
+
+# Diretórios como build e dist
+build/
+dist/
+*.egg-info/
+MANIFEST.in
+setup.py
+poetry.lock
+poetry.toml
+examples.py

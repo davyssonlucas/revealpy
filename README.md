@@ -1,25 +1,25 @@
-# PyReveal Documentation
+# RevealPy Documentation
 
-PyReveal is a Python library for creating beautiful and interactive presentations programmatically. It provides a simple yet powerful API to create presentations with various content types and layouts.
+RevealPy is a Python library for creating beautiful and interactive presentations programmatically. It provides a simple yet powerful API to create presentations with various content types and layouts.
 
 ## Installation
 
 ```bash
-pip install pyreveal
+pip install revealpy
 ```
 
 ## Quick Start
 
 ```python
-from pyreveal import Presentation
-from pyreveal.layouts import LayoutType
+from revealpy import Presentation
+from revealpy import LayoutType
 
 # Create a new presentation
 presentation = Presentation(theme="black", transition="fade")
 
 # Create a title slide
 slide = presentation.create_slide("My First Presentation")
-slide.add_text("Created with PyReveal")
+slide.add_text("Created with RevealPy")
 
 # Export the presentation
 presentation.export("my_presentation.html")
@@ -223,14 +223,14 @@ presentation.export_pptx("presentation.pptx")
 ### Creating a Complete Presentation
 
 ```python
-from pyreveal import Presentation
-from pyreveal.layouts import LayoutType
+from revealpy import Presentation
+from revealpy import LayoutType
 
 # Create presentation
 pres = Presentation(theme="black")
 
 # Title slide
-title_slide = pres.create_slide("PyReveal Presentation")
+title_slide = pres.create_slide("RevealPy Presentation")
 title_slide.add_text("Created with Python")
 
 # Content slide
@@ -245,7 +245,7 @@ content_slide.add_bullet_points([
 # Two-column slide
 compare_slide = pres.create_slide("Comparison")
 compare_slide.set_layout(LayoutType.COMPARISON)
-compare_slide.add_comparison("Traditional", "PyReveal")
+compare_slide.add_comparison("Traditional", "RevealPy")
 compare_slide.add_to_column(0, Content(ContentType.TEXT, "Manual creation"))
 compare_slide.add_to_column(1, Content(ContentType.TEXT, "Programmatic creation"))
 
