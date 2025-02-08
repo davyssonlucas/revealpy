@@ -21,3 +21,4 @@ MANIFEST.in
 setup.py
 poetry.lock
 poetry.toml
+postlinkedin.md
