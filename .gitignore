@@ -1,0 +1,12 @@
+output
+antigos
+themes
+templates
+*.pyc
+*.pyo
+*.log
+.env
+.venv
+__pycache__/
+.idea
+dev.env
