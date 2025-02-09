@@ -86,7 +86,7 @@ class HTMLGenerator:
             media_type = content.value['type']
 
             if "youtube.com" in url:  # Identifica se o link é do YouTube
-                return f'<iframe width="560" height="315" src="{url}" frameborder="0" ' \
+                return f'<iframe width="720" height="480" src="{url}" frameborder="0" ' \
                        f'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' \
                        f'allowfullscreen></iframe>'
 

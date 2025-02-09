@@ -1,6 +1,6 @@
 [project]
 name = "revealpy"
-version = "0.1.3"
+version = "0.1.5"
 description = "RevealPy is a Python library for creating beautiful and interactive presentations programmatically. It provides a simple yet powerful API to create presentations with various content types and layouts"
 authors = [
     {name = "Davysson Santana",email = "davyssonlucas@gmail.com"}

@@ -69,7 +69,31 @@ def load_template(theme: str, transition: str, slides_content: str, pdf_export: 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
 
         <style>
-
+            .comparison-headers {{
+               display: flex;
+               justify-content: space-between;
+               align-items: flex-start;
+               padding: 10px;
+            }}
+            .left-header,
+            .right-header {{
+               width: 45%;
+               text-align: center;
+            }}
+            .two-columns {{
+               display: flex;
+               flex-direction: row;
+               gap: 3rem;
+               text-align: start;
+               border: 1px solid grey;
+            }}
+            
+            .column {{
+               flex: 1; /* Faz com que as colunas ocupem espaço igual */
+               padding: 2rem;
+               border-left: 1px solid grey;
+               padding: 10px;
+            }}
             .pdf-btn {{
                 position: fixed;
                 top: 30px;
