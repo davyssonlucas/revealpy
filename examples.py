@@ -96,9 +96,9 @@ pres.create_slide("Exemplo de Slide com Vídeo") \
 pres.create_slide(".").add_markdown("""
 ## Comece a Usar RevealPy Agora!
 #### Links úteis para começar:
-- [GitHub](https://github.com/)
+- [GitHub](https://github.com/davyssonlucas/revealpy)
 - [pypi.org](https://pypi.org/project/revealpy/)
-- [Documentação Oficial](https://revealpy.org)
+- [Documentação Oficial](https://github.com/davyssonlucas/revealpy)
 """)
 
 # Exportação da apresentação
