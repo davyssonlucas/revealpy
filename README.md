@@ -1,5 +1,15 @@
-# RevealPy Documentation
-
+<h1>
+    <p align="center">
+        <!-- Logo Section -->
+        <img src="./assets/revealpy_logo.webp" width="150" height="auto" alt="Logo RevealPy"/>
+        <br>
+        <!-- Badges -->
+        <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+        <img src="https://img.shields.io/github/issues/davyssonlucas/revealpy" alt="Issues Abertas"/>
+        <img src="https://img.shields.io/github/issues-pr/davyssonlucas/revealpy" alt="Pull Requests"/>
+        <img src="https://img.shields.io/github/contributors/davyssonlucas/revealpy" alt="Contribuidores"/>
+    </p>
+</h1>
 RevealPy is a Python library for creating beautiful and interactive presentations programmatically. It provides a simple yet powerful API to create presentations with various content types and layouts.
 
 ## Installation
@@ -252,3 +262,7 @@ compare_slide.add_to_column(1, Content(ContentType.TEXT, "Programmatic creation"
 # Export
 pres.export("example_presentation.html")
 ```
+## 🤝 Contributing
+- Contributions and bug fixes are welcome! If you'd like to contribute, fork the repository and submit a pull request. For versioning, use GitFlow.
+[Cheatsheet do git-flow](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html)
+- If you have any questions or want to discuss something, open an issue in the repository.
